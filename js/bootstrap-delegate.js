@@ -4,7 +4,7 @@
 +function ($) {
     $(document).on('click.bs.delegate.data-api', '[data-delegate]', function (e) {
         var $this = $(this)
-        var press = $this.data('press');
+        var press = $this.data('delegate');
         var href = $this.attr('href')
         var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) // strip for ie7
         switch (press) {

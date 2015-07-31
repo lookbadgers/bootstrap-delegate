@@ -1,5 +1,5 @@
 /* 
- * Bootstrap: bootstrap-delegate.js v0.0.2
+ * Bootstrap: bootstrap-delegate.js v0.0.3
  */
 +function ($) {
     $(document).on('click.bs.delegate.data-api', '[data-delegate]', function (e) {

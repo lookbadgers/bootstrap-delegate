@@ -12,6 +12,10 @@
                 return $target.trigger('click');
             case 'form':
                 return $target.submit();
+            case 'collapse-hide':
+                return $target.hasClass('in')?$target.collapse('hide'):false;
+            case 'collapse-show':
+                return !$target.hasClass('in')?$target.collapse('show'):false;
             default:
                 $target.trigger(press);
         }

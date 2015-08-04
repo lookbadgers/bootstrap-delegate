@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Tab Delegate Example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://raw.githubusercontent.com/lookbadgers/bootstrap-delegate/master/js/bootstrap-delegate.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-title">Tab Delegate Example</h1>
+                    <div>
+                        <!-- Nav tabs -->
+                        <ul id="my-tabs" class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">...</div>
+                            <div role="tabpanel" class="tab-pane" id="profile">...</div>
+                            <div role="tabpanel" class="tab-pane" id="messages">...</div>
+                            <div role="tabpanel" class="tab-pane" id="settings">...</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Create a next / previous button for use with bootstrap tabs with minimal additional code.</p>
+
+                    
+                    
+                            <button class="btn btn-default" data-delegate="tab-previous" data-target="#my-tabs">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                Previous
+                            </button>                    <pre>&lt;button type="button" class="btn btn-primary" data-delegate="tab-previous" data-target="#my-tabs"&gt;Previous Tab&lt;/button&gt;</pre>
+                            <button class="btn btn-default" data-delegate="tab-next" data-target="#my-tabs">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                Next
+                            </button>
+                    <pre>&lt;button type="button" class="btn btn-primary" data-delegate="tab-next" data-target="#my-tabs"&gt;Next Tab&lt;/button&gt;</pre>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

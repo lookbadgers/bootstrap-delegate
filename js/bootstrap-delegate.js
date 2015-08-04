@@ -1,5 +1,5 @@
 /* 
- * Bootstrap: bootstrap-delegate.js v0.0.3
+ * Bootstrap: bootstrap-delegate.js v0.0.4
  */
 +function ($) {
     $(document).on('click.bs.delegate.data-api', '[data-delegate]', function (e) {
@@ -16,8 +16,27 @@
                 return $target.hasClass('in')?$target.collapse('hide'):false;
             case 'collapse-show':
                 return !$target.hasClass('in')?$target.collapse('show'):false;
+            case 'tab-next':
+                return tab($target,true);
+            case 'tab-previous':
+                return tab($target,false);
             default:
                 $target.trigger(press);
+        }
+        
+        function tab($target,next) {
+            var $tabs = $('a[role=tab]',$target);
+            var $active = $('li.active a[role=tab]',$target);
+            var index = $tabs.index($active);
+            index += (next?1:-1);
+            if (index >= $tabs.length) {
+                index = 0;
+            }
+            var $tab = $tabs.eq(index);
+            if ($tab.length) {
+                $tab.tab('show');
+                window.location = '#'+$target.attr('id');
+            }
         }
     });
 }(jQuery);

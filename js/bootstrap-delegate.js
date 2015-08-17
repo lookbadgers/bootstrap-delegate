@@ -1,5 +1,5 @@
 /* 
- * Bootstrap: bootstrap-delegate.js v0.0.4
+ * Bootstrap: bootstrap-delegate.js v0.0.5
  */
 +function ($) {
     $(document).on('click.bs.delegate.data-api', '[data-delegate]', function (e) {
@@ -13,9 +13,9 @@
             case 'form':
                 return $target.submit();
             case 'collapse-hide':
-                return $target.hasClass('in')?$target.collapse('hide'):false;
+                return $target.hasClass('in')?$target.collapse('hide'):$target.trigger('hide.bs.collapse');
             case 'collapse-show':
-                return !$target.hasClass('in')?$target.collapse('show'):false;
+                return !$target.hasClass('in')?$target.collapse('show'):$target.trigger('show.bs.collapse');;
             case 'tab-next':
                 return tab($target,true);
             case 'tab-previous':

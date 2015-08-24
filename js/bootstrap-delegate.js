@@ -1,5 +1,5 @@
 /* 
- * Bootstrap: bootstrap-delegate.js v0.0.5
+ * Bootstrap: bootstrap-delegate.js v0.0.6
  */
 +function ($) {
     $(document).on('click.bs.delegate.data-api', '[data-delegate]', function (e) {
@@ -9,7 +9,7 @@
         var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) // strip for ie7
         switch (press) {
             case 'button':
-                return $target.trigger('click');
+                return $target[0].click();
             case 'form':
                 return $target.submit();
             case 'collapse-hide':
